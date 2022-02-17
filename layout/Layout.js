@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <title>Gymplex {name ? `- ${name}` : ""}</title>
       </Head>
       <Header />
-      <main className="container h-screen">{children}</main>
+      <main className="h-screen">{children}</main>
       <Footer />
     </>
   );

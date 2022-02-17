@@ -1,0 +1,20 @@
+.nosotrosHeader {
+  background-image: url(../public/img/nosotros.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30rem;
+
+}
+.nosotrosHeader h1 {
+  text-align: center;
+  color: var(--blanco);
+  font-weight: 900;
+}
+.nosotrosContent{
+    margin-top: -80px;
+    background-color: var(--blanco);
+    /* height: 60vh; */
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}

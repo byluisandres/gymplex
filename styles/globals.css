@@ -32,9 +32,9 @@ a {
 [class*="active"] {
   border-bottom: 0.2rem solid var(--primary);
 }
-[class*="h-screen"] {
+/* [class*="h-screen"] {
   height: 100vh;
-}
+} */
 
 [class*="container"] {
   max-width: 120rem;

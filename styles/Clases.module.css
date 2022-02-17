@@ -1,0 +1,34 @@
+.clasesHeader {
+  text-align: center;
+}
+.clasesMain {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5rem;
+  margin: 2rem 0rem 2rem;
+}
+@media (min-width: 768px) {
+  .clasesMain {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card {
+  position: relative;
+}
+.cardbody {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 0.5rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  color: var(--blanco);
+  padding: 1rem;
+}
+.cardbody a {
+  font-size: 3rem;
+  color: var(--blanco);
+}
+.cardbody a:hover{
+    text-decoration: underline;
+}
