@@ -19,7 +19,7 @@ const Clases = ({ data }) => {
                   src="/img/cursos_bg.jpg"
                   alt="logo"
                   width={600}
-                  height={400}
+                  height={300}
                 />
               </div>
               <div className={styles.cardbody}>

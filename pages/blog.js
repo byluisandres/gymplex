@@ -1,144 +1,73 @@
 import Layout from "../layout/Layout";
 import Image from "next/image";
 import styles from "../styles/Blog.module.css";
+import Link from "next/link";
+import { formatDate } from "../utils/formatDate";
 
-const Blog = () => {
+const Blog = ({ data }) => {
   return (
     <Layout>
       <div className="container">
         <section className={styles.blogMain}>
-          <article className={styles.card}>
-            <div className="cardimage">
-              <Image
-                src="/img/cursos_bg.jpg"
-                alt="logo"
-                width={600}
-                height={300}
-              />
-            </div>
-            <div className={styles.cardheader}>
-              <div>
-                <p>11</p>
-                <p>Nov</p>
+          {data.map((post, index) => (
+            <article key={index} className={styles.card}>
+              <div className={styles.cardimage}>
+                <Image
+                  src="/img/cursos_bg.jpg"
+                  alt="logo"
+                  width={600}
+                  height={300}
+                />
               </div>
-              <h2>Título</h2>
-            </div>
-            <div className={styles.cardbody}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </div>
-            <div className={styles.cardfooter}>
-              <button> Leer más</button>
-            </div>
-          </article>
-          <article className={styles.card}>
-            <div className="cardimage">
-              <Image
-                src="/img/cursos_bg.jpg"
-                alt="logo"
-                width={600}
-                height={300}
-              />
-            </div>
-            <div className={styles.cardheader}>
-              <div>
-                <p>11</p>
-                <p>Nov</p>
+              <div className={styles.cardbody}>
+                <div className={styles.cardheader}>
+                  <h2>{post.title.rendered}</h2>
+                  <div className={styles.cardfooter}>
+                    <p>{formatDate(post.modified)}</p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <a>
+                        Leer más
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <h2>Título</h2>
-            </div>
-            <div className={styles.cardbody}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </div>
-            <div className={styles.cardfooter}>
-              <button> Leer más</button>
-            </div>
-          </article>
-          <article className={styles.card}>
-            <div className="cardimage">
-              <Image
-                src="/img/cursos_bg.jpg"
-                alt="logo"
-                width={600}
-                height={300}
-              />
-            </div>
-            <div className={styles.cardheader}>
-              <div>
-                <p>11</p>
-                <p>Nov</p>
-              </div>
-              <h2>Título</h2>
-            </div>
-            <div className={styles.cardbody}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </div>
-            <div className={styles.cardfooter}>
-              <button> Leer más</button>
-            </div>
-          </article>
-          <article className={styles.card}>
-            <div className="cardimage">
-              <Image
-                src="/img/cursos_bg.jpg"
-                alt="logo"
-                width={600}
-                height={300}
-              />
-            </div>
-            <div className={styles.cardheader}>
-              <div>
-                <p>11</p>
-                <p>Nov</p>
-              </div>
-              <h2>Título</h2>
-            </div>
-            <div className={styles.cardbody}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </div>
-            <div className={styles.cardfooter}>
-              <button> Leer más</button>
-            </div>
-          </article>
+            </article>
+          ))}
         </section>
       </div>
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://gymplex.test/wp-json/wp/v2/posts`);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { data },
+  };
+}
 
 export default Blog;

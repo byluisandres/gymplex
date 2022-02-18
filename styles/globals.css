@@ -29,6 +29,9 @@ li {
 a {
   text-decoration: none;
 }
+[class*="mt-3"] {
+  margin-top: 3rem;
+}
 
 [class*="active"] {
   border-bottom: 0.2rem solid var(--primary);
