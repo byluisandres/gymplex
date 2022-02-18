@@ -4,7 +4,9 @@ import Layout from "../layout/Layout";
 const Inicio = () => {
   return (
     <Layout>
-      <h1>Inicio</h1>
+      <div className="container">
+        <h1>Inicio</h1>
+      </div>
     </Layout>
   );
 };

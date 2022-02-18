@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 const Header = () => {
   const router = useRouter();
-
   return (
     <header className={styles.header}>
       <div className="container">
@@ -42,7 +41,14 @@ const Header = () => {
               </li>
               <li>
                 <Link href="/clases">
-                  <a className={router.pathname === "/clases" ? "active" : ""}>
+                  <a
+                    className={
+                      router.pathname === "/clases" ||
+                      router.pathname === "/clases/[slug]"
+                        ? "active"
+                        : ""
+                    }
+                  >
                     Clases
                   </a>
                 </Link>
