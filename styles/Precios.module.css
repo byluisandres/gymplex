@@ -1,0 +1,81 @@
+/*tarifas*/
+.tarifas {
+  background-color: var(--gris);
+}
+.tarifas h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.tarifas p {
+  text-align: center;
+}
+.contenedortarifas {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+.contenedortarifas .tarifa {
+  flex: 0 0 100%;
+  padding: 3rem;
+  background-color: var(--blanco);
+  text-align: center;
+  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.2);
+}
+@media (min-width: 768px) {
+  .contenedortarifas .tarifa {
+    border-radius: 1rem;
+  }
+}
+.contenedorprice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedortarifas .price {
+  border: 0.2rem solid var(--primary);
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.contenedortarifas .price .mes {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.contenedortarifas .tarifa:nth-child(even) .price {
+  border: 0.2rem solid var(--blanco);
+  color: var(--blanco);
+}
+
+.contenedortarifas .tarifa:nth-child(even) {
+  background-color: var(--primary);
+  color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+  .contenedortarifas .tarifa:nth-child(even) {
+    transform: scale(1.2);
+    box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.5);
+  }
+}
+.contenedortarifas .tarifa span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+@media (min-width: 480px) {
+  .contenedortarifas .tarifa {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contenedortarifas .tarifa {
+    flex: 0 0 25%;
+  }
+}

@@ -1,8 +1,9 @@
 :root {
-  --primary: #e99401;
-  --negro: #262626;
+  --primary: #c2410c;
+  --negro: #171717;
   --blanco: #fff;
   --fuente-principal: "Outfit", sans-serif;
+  --gris: #ffffff;
 }
 html {
   font-size: 62.5%;
@@ -16,11 +17,9 @@ html {
 body {
   font-size: 2rem;
   font-family: var(--fuente-principal);
-  line-height: 1.5;
 }
 img {
   max-width: 100%;
-  border-radius: 0.3rem;
 }
 li {
   list-style: none;
@@ -54,4 +53,29 @@ a {
 }
 hr {
   color: #e4e4e7;
+}
+
+.swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 0rem !important;
+    font-weight: 900;
+  }
+
+@media (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    background-color: var(--blanco);
+    border-radius: 50%;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 2rem !important;
+    font-weight: 900;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--negro) !important;
+  }
 }

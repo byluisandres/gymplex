@@ -6,6 +6,8 @@ import styles from "../styles/Contacto.module.css";
 const Map = dynamic(() => import("../components/Map"), { ssr: false });
 const Contacto = ({ data }) => {
   const { direccion, ubicacion, correo_electronico, movil } = data.acf;
+  const { hora_apertura, hora_cierre, dias } = data.acf.horario;
+
   return (
     <Layout>
       <div className="container">
@@ -32,6 +34,16 @@ const Contacto = ({ data }) => {
             <h5>Móvil</h5>
             <p>
               <a href={`tel:+34${movil}`}>{movil}</a>
+            </p>
+          </article>
+          <article className={styles.infohorario}>
+            <h2>Horario</h2>
+            <hr />
+            <p>
+              {dias.map((dia, index) => (
+                <span key={index}>{dia} </span>
+              ))}
+              {hora_apertura} a {hora_cierre} horas
             </p>
           </article>
         </section>

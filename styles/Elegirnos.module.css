@@ -1,0 +1,40 @@
+.elegirnosHeader h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.elegirnosContent {
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+/* .elegirnosContent .item {
+  border-bottom: 0.2rem solid var(--primary);
+}
+.elegirnosContent .item:last-child {
+  border-bottom: 0;
+}
+.elegirnosContent .item p {
+  margin: 0 0 24px;
+  min-height: 48px;
+  padding: 0 0 0 50px !important;
+  position: relative;
+}
+*/
+/* .elegirnosContent .item p span {
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+} */
+.elegirnosContent .item p {
+  border-bottom: 0.2rem solid var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+.elegirnosContent .item:last-child p {
+  border-bottom: 0;
+}

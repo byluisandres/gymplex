@@ -52,3 +52,22 @@
 .infophone p a:hover {
   text-decoration: underline;
 }
+.infohorario {
+  margin-top: 4rem;
+}
+.infohorario h2 {
+  line-height: 0rem;
+}
+.infohorario p {
+  line-height: 0.5rem;
+  font-size: 1.7rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.infohorario span::after {
+  content: ",";
+}
+.infohorario span:last-child::after {
+  content: "";
+}

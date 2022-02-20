@@ -1,0 +1,28 @@
+.hero {
+  background-color: #cccccc;
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  text-align: center;
+  color: var(--blanco);
+  font-weight: 900;
+}
+.hero p {
+  text-align: center;
+  color: var(--blanco);
+  font-weight: 700;
+}
+
+.bienvenida h1 {
+  text-align: center;
+  color: var(--primary);
+}
+.bienvenida p {
+  text-align: center;
+}

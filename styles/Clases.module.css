@@ -1,5 +1,7 @@
-.clasesHeader {
+.clasesHeader h1 {
   text-align: center;
+  color: var(--primary);
+  text-transform: uppercase;
 }
 .clasesMain {
   display: grid;
@@ -44,7 +46,27 @@
 .cardbody a:hover {
   text-decoration: underline;
 }
+.btnMore {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btnMore a::after {
+  content: "→";
+}
+.btnMore a {
+  background-color: var(--primary);
+  color: var(--blanco);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
 
+@media (min-width: 768px) {
+  .btnMore a:hover {
+    text-decoration: underline;
+  }
+}
 /*** Clase ***/
 .claseimage {
   margin-top: 2rem;

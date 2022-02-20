@@ -1,0 +1,51 @@
+.instructores {
+  padding: 2rem 0rem 2rem 0rem;
+  margin-top: 2rem;
+  background-color: #f9fafb;
+  margin-bottom: 5rem;
+}
+.instructoresheader {
+  margin-bottom: 2rem;
+}
+.instructoresheader h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.instructoresheader span {
+  display: block;
+  text-align: center;
+}
+
+.instructorescontent .card {
+  position: relative;
+}
+.instructorescontent .cardbody {
+  position: absolute;
+  bottom: 0;
+  line-height: 1rem;
+  padding: 0.7rem;
+}
+.instructorescontent .cardbody p {
+  color: var(--blanco);
+  line-height: 0rem;
+}
+.instructorescontent .cardbody span {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 5px;
+  border: 0.2rem solid var(--primary);
+  color: var(--blanco);
+}
+.especialidades {
+  display: none;
+}
+@media (min-width: 768px) {
+  .especialidades {
+    display: block;
+  }
+}

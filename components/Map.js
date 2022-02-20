@@ -1,9 +1,9 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 const Map = ({ direccion, ubicacion }) => {
-  const position = [40.4047035, -3.6743565];
+  const position = [40.4321073, -3.6538786];
   const styleMap = { width: "100%", height: "50vh" };
   return (
     <MapContainer style={styleMap} center={position} zoom={20}>
